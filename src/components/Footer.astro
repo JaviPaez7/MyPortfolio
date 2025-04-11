@@ -1,0 +1,48 @@
+---
+// Footer.astro
+---
+<footer class="footer">
+    <div class="container">
+        <p>&copy; {new Date().getFullYear()} Javi. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="mailto:your.email@example.com">Email</a></li>
+        </ul>
+    </div>
+</footer>
+
+<style>
+    :global(body) {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .footer {
+        background-color: #222;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+        margin-top: auto;
+    }
+
+    .social-links {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-links a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .social-links a:hover {
+        text-decoration: underline;
+    }
+</style>

@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/tailwind.css";
+import Header from "../components/Header.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GithubIcon from "../components/icons/GitHub.astro";
+import JavaScriptIcon from "../components/icons/JavaScript.astro";
+import HtmlIcon from "../components/icons/Html.astro";
+import MailIcon from "../components/icons/Mail.astro";
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout
+    title="Portfolio de Javi Paez - Desarrollador y programador web"
+    description="Contrata a Javi Paez, un desarrollador web con experiencia en la creación de aplicaciones web modernas y escalables. Me apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente."
+>
+    <main class="px-4">
+        <section class="w-full mx-auto lg:w-[740px] py-44">
+            <img
+                src="https://yt3.ggpht.com/uvGkE6HJvLg1oixdQFs6rzeUsgsA9_kIgCdReOLe-53TAPaIBjDDN0LimK_w38XeoLsHALVDjQ=s88-c-k-c0x00ffffff-no-rj"
+                alt="Avatar"
+                class="w-12 h-12 rounded-full mb-4"
+            />
+            <h1
+                class="text-white text-3xl md:text-4xl lg:text-6xl font-bold flex flex-row gap-x-4 pb-4"
+            >
+                Hey, soy Javi <div class="flex justify-center items-center">
+                    <a
+                        href="https://www.linkedin.com/in/javier-paez/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex justify-center items-center"
+                        ><Badge>Disponible para trabajar</Badge></a
+                    >
+                </div>
+            </h1>
+            <h2
+                class="text-2xl opacity-80 items-center text-pretty max-w-[700px]">
+            
+                Un <span class="font-bold text-yellow-200/90">
+                    Desarrollador Web</span
+                > con experiencia en la creación de aplicaciones web modernas y escalables.
+                Me apasiona aprender nuevas tecnologías y mejorar mis habilidades
+                constantemente.
+                <span class="text-red-400 opacity-90"
+                    >De las Islas Canarias, España</span
+                >.
+            </h2>
+            <nav class="flex flex-row justify-center items-center gap-x-4 mt-4">
+                <SocialPill href="https://www.linkedin.com/in/javier-paez/">
+                    <LinkedInIcon />
+                    <span class="text-sm">LinkedIn</span>
+                </SocialPill>
+                <SocialPill href="https://github.com/JaviPaez7">
+                    <GithubIcon />
+                    <span class="text-sm">GitHub</span>
+                </SocialPill>
+                <SocialPill>
+                    <MailIcon href="mailto:javipaeztoledo@gmail.com" />
+                    <span class="text-sm">javipaeztoledo@gmail.com</span>
+                </SocialPill>
+            </nav>
+        </section>
+    </main>
+</Layout>

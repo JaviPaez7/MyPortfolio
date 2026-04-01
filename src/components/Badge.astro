@@ -4,8 +4,14 @@
   ></span>
 
   <div
-    class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur-3xl"
+    class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur-3xl gap-2"
   >
+    <div class="flex items-center">
+      <span class="relative flex size-2">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+      </span>
+    </div>
     <slot />
   </div>
 </div>

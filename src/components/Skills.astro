@@ -1,0 +1,66 @@
+---
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Supabase from "./icons/Supabase.astro"
+import ReactIcon from "./icons/React.astro"
+import NodeIcon from "./icons/Node.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import GitIcon from "./icons/GitHub.astro"
+
+const SKILLS = [
+  {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: ReactIcon,
+  },
+  {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  {
+    name: "Astro",
+    class: "bg-[#1c1c1c] text-white",
+    icon: AstroIcon,
+  },
+  {
+    name: "Node.js",
+    class: "bg-[#1c1c1c] text-white",
+    icon: NodeIcon,
+  },
+  {
+    name: "Supabase",
+    class: "bg-[#1c1c1c] text-white",
+    icon: Supabase,
+  },
+  {
+    name: "PostgreSQL",
+    class: "bg-[#003159] text-white",
+    icon: PostgreSQL,
+  },
+  {
+    name: "Git",
+    class: "bg-black text-white",
+    icon: GitIcon,
+  },
+]
+---
+
+<div class="flex flex-wrap gap-4 mt-8">
+  {
+    SKILLS.map((skill) => (
+      <span
+        class={`flex items-center gap-x-2 rounded-full text-xs ${skill.class} py-2 px-4 border border-white/10 hover:scale-105 transition-transform cursor-default`}
+      >
+        <skill.icon class="size-4" />
+        {skill.name}
+      </span>
+    ))
+  }
+</div>

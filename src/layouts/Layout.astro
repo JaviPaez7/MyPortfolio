@@ -38,7 +38,7 @@ const { title, description } = Astro.props;
   </head>
   <body class="relative text-black dark:text-white">
     <div
-      class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[radial-gradient(#ffffff1a_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+      class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[radial-gradient(#ffffff15_1px,transparent_1px)] [background-size:20px_20px]"
     >
     </div>
     <Header />
@@ -63,6 +63,7 @@ const { title, description } = Astro.props;
     flex-direction: column;
     min-height: 100vh;
     overscroll-behavior: none;
+    background: #050505;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -90,8 +91,7 @@ const { title, description } = Astro.props;
     items.forEach((item) => {
       const windowHeight = window.innerHeight;
       const elementTop = item.getBoundingClientRect().top;
-      const elementVisible = 150;
-      if (elementTop < windowHeight - elementVisible) {
+      if (elementTop < windowHeight * 0.85) {
         item.classList.add("active");
       }
     });

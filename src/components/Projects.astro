@@ -1,0 +1,116 @@
+---
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import GitHub from "./icons/GitHub.astro"
+import Link from "./icons/Link.astro"
+import Supabase from "./icons/Supabase.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: "bg-[#1c1c1c] text-white",
+    icon: Supabase,
+  }
+}
+const PROJECTS = [
+  {
+    title: "DM Command Center - Gestión de Campañas D&D",
+    description:
+      "Plataforma Full Stack para Dungeon Masters. Incluye rastreador de combate, gestión de personajes en tiempo real con Supabase, tirador de dados interactivo y sistema de notas compartido.",
+    link: "https://dm-dashboard-nine.vercel.app/",
+    github: "https://github.com/JaviPaez7/dm-command-center",
+    image: "/projects/dm-command.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
+  },
+  {
+    title: "Moviefy - Tu explorador de cine y series",
+    description:
+      "Aplicación web con scroll infinito y sistema de favoritos persistente. Integración con TMDB API para obtener los últimos estrenos y detalles técnicos de películas y series.",
+    link: "https://moviefy-rosy.vercel.app/",
+    github: "https://github.com/JaviPaez7/movie-explorer",
+    image: "/projects/moviefy.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "Tanke - Encuentra la gasolina más barata",
+    description:
+      "Buscador de gasolineras en tiempo real con filtrado por provincia y tipo de combustible. Visualización de los precios más competitivos de todo el país en Canarias y península.",
+    link: "https://tanke-seven.vercel.app/",
+    github: "https://github.com/JaviPaez7/gas-station-tracker",
+    image: "/projects/tanke.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:ring-1 lg:ring-white/10 lg:hover:ring-white/20 ">
+      <a href={link} target="_blank" rel="noopener noreferrer" class="w-full h-full">
+        <img alt="Captura de pantalla del proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      </a>
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-100 mb-2">
+      <a href={link} target="_blank" rel="noopener noreferrer" class="hover:text-yellow-200 transition-colors">
+        {title}
+      </a>
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-400 text-pretty">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <a
+              href={github}
+              role="link"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-within:ring-none focus:outline-none focus:ring-none rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
+            >
+              <GitHub class="size-6" />
+              Código
+            </a>
+          )}
+          {link && link !== "#" && (
+            <a
+              href={link}
+              role="link"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-within:ring-none focus:outline-none focus:ring-none rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
+            >
+              <Link class="size-4" />
+              Demo
+            </a>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>

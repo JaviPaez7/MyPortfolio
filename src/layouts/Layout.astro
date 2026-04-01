@@ -1,10 +1,13 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/tailwind.css";
 interface Props {
   title: string;
   description: string;
 }
+
+const { title, description } = Astro.props; 
 ---
 
 <!doctype html>
@@ -13,16 +16,16 @@ interface Props {
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Portfolio de Javi Paez - Desarrollador y programador web"
+      content={description}
     />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>My Portfolio</title>
+    <title>{title}</title>
   </head>
   <body class="">
     <div
-      class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"
+      class="fixed inset-0 -z-10 h-full w-full bg-[#050505] bg-[radial-gradient(#ffffff1a_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
     >
     </div>
     <Header />
@@ -49,7 +52,7 @@ interface Props {
       "Helvetica Neue",
       sans-serif;
   }
-  ,
+  
   body {
     display: flex;
     flex-direction: column;
@@ -57,6 +60,7 @@ interface Props {
     min-height: 100vh;
     background: #050505;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   @media (prefers-reduced-motion: reduce) {
     html {

@@ -1,15 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/tailwind.css";
 import Header from "../components/Header.astro";
 import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GithubIcon from "../components/icons/GitHub.astro";
-import JavaScriptIcon from "../components/icons/JavaScript.astro";
-import HtmlIcon from "../components/icons/Html.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -17,103 +17,83 @@ import SectionContainer from "../components/SectionContainer.astro";
 
 <Layout
   title="Portfolio de Javi Paez - Desarrollador y programador web"
-  description="Contrata a Javi Paez, un desarrollador web con experiencia en la creación de aplicaciones web modernas y escalables. Me apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente."
+  description="Un desarrollador web con experiencia en la creación de aplicaciones web modernas y escalables."
 >
   <main class="px-4">
-    <SectionContainer class="py-44 pb-22">
-      <img
-        src="https://yt3.ggpht.com/uvGkE6HJvLg1oixdQFs6rzeUsgsA9_kIgCdReOLe-53TAPaIBjDDN0LimK_w38XeoLsHALVDjQ=s88-c-k-c0x00ffffff-no-rj"
-        alt="Avatar"
-        class="w-12 h-12 rounded-full mb-4"
-      />
+    <SectionContainer id="hero" class="py-16 md:py-36 pb-32">
+      <div class="flex gap-4 mb-4 items-center">
+        <img
+          class="rounded-full shadow-lg size-16 object-cover border-2 border-white/10"
+          src="https://yt3.ggpht.com/uvGkE6HJvLg1oixdQFs6rzeUsgsA9_kIgCdReOLe-53TAPaIBjDDN0LimK_w38XeoLsHALVDjQ=s88-c-k-c0x00ffffff-no-rj"
+          alt="Javi Paez photo"
+        />
+        <a
+          href="https://linkedin.com/in/javipaez"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center transition md:justify-center md:hover:scale-105"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </div>
       <h1
-        class="text-white text-3xl md:text-4xl lg:text-6xl font-bold flex flex-row gap-x-4 pb-4"
+        class="text-4xl font-bold tracking-tight text-gray-200 sm:text-5xl"
       >
-        Hey, soy Javi <div class="flex justify-center items-center">
-          <a
-            href="https://www.linkedin.com/in/javier-paez/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex justify-center items-center"
-            ><Badge>Disponible para trabajar</Badge></a
-          >
-        </div>
+        Hey, soy Javi Paez
       </h1>
-      <h2 class="text-2xl opacity-80 items-center text-pretty max-w-[700px]">
-        Un <span class="font-bold text-yellow-200/90"> Desarrollador Web</span> con
-        experiencia en la creación de aplicaciones web modernas y escalables. Me
-        apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente.
-        <span class="text-red-400 opacity-90"
-          >De las Islas Canarias, España</span
-        >.
-      </h2>
-      <nav class="flex flex-row justify-center items-center gap-x-4 mt-4">
-        <SocialPill href="https://www.linkedin.com/in/javier-paez/">
-          <LinkedInIcon />
-          <span class="text-sm">LinkedIn</span>
+      <p
+        class="mt-6 text-xl text-gray-300 [&>strong]:text-yellow-200 [&>strong]:font-semibold text-pretty"
+      >
+        +2 años de experiencia. <strong>Desarrollador Web Full Stack</strong> de Canarias, España 🇮🇨. Especializado en crear aplicaciones únicas y funcionales.
+      </p>
+      <nav class="flex flex-wrap gap-4 mt-8">
+        <SocialPill href="https://linkedin.com/in/javipaez">
+          <LinkedInIcon class="size-4" />
+          LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/JaviPaez7">
-          <GithubIcon />
-          <span class="text-sm">GitHub</span>
+          <GithubIcon class="size-4" />
+          GitHub
         </SocialPill>
-        <SocialPill a href="mailto:javipaeztoledo@gmail.com">
-          <MailIcon />
-          <span class="text-sm">javipaeztoledo@gmail.com</span>
+        <SocialPill href="mailto:javipaeztoledo@gmail.com">
+          <MailIcon class="size-4" />
+          javipaeztoledo@gmail.com
+        </SocialPill>
+        <SocialPill href="/CV_Javi_Paez.pdf" download="CV_Javi_Paez.pdf">
+          <svg class="size-4"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+          Descargar CV
         </SocialPill>
       </nav>
     </SectionContainer>
 
-    <SectionContainer>
-      <h3 class="text-2xl opacity-80 items-center text-pretty max-w-[700px]">
-        Mis habilidades
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-          <h4 class="text-xl font-bold text-yellow-200">Hola</h4>
-          <p class="text-sm text-gray-400 mt-2">
-            Descripción breve del proyecto 1. Explica qué hace y qué tecnologías
-            utilizaste.
-          </p>
-          <a
-            href="https://github.com/JaviPaez7/MyPortfolio"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-400 mt-2 inline-block"
-          >
-            Ver en GitHub
-          </a>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-          <h4 class="text-xl font-bold text-yellow-200">Hola</h4>
-          <p class="text-sm text-gray-400 mt-2">
-            Descripción breve del proyecto 2. Explica qué hace y qué tecnologías
-            utilizaste.
-          </p>
-          <a
-            href="https://github.com/JaviPaez7/proyecto2"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-400 mt-2 inline-block"
-          >
-            Ver en GitHub
-          </a>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-          <h4 class="text-xl font-bold text-yellow-200">Hola</h4>
-          <p class="text-sm text-gray-400 mt-2">
-            Descripción breve del proyecto 3. Explica qué hace y qué tecnologías
-            utilizaste.
-          </p>
-          <a
-            href="https://github.com/JaviPaez7/proyecto3"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-blue-400 mt-2 inline-block"
-          >
-            Ver en GitHub
-          </a>
-        </div>
-      </div>
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+      >
+        <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+      >
+        <svg class="size-7" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+      >
+        <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg>
+        Sobre mí
+      </h2>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>

@@ -1,9 +1,71 @@
-<header class="flex items-center justify-center p-4 py-3 w:full xl:[1120px]">
-  <span> </span>
-  <nav class="flex flex-row space-x-10 items-center p-4 opacity-90">
-    <a href="/">Inicio</a>
-    <a href="/about">Sobre mí</a>
-    <a href="/projects">Proyectos</a>
-    <a href="/contact">Contacto</a>
+<header
+  class="flex justify-center items-center py-5 sticky top-0 w-full z-10 px-4"
+>
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-gray-200 justify-center items-center backdrop-blur-md bg-white/5 border border-white/10 shadow-lg transition-all duration-300 gap-x-2"
+  >
+    <a
+      class="hover:text-yellow-400 px-3 py-2 transition-colors"
+      aria-label="experiencia"
+      href="#experiencia">Experiencia</a
+    >
+    <a
+      class="hover:text-yellow-400 px-3 py-2 transition-colors"
+      aria-label="proyectos"
+      href="#proyectos">Proyectos</a
+    >
+    <a
+      class="hover:text-yellow-400 px-3 py-2 transition-colors"
+      aria-label="sobre-mi"
+      href="#sobre-mi">Sobre mí</a
+    >
+    <a
+      class="hover:text-yellow-400 px-3 py-2 transition-colors"
+      aria-label="contacto"
+      href="mailto:javipaeztoledo@gmail.com">Contacto</a
+    >
   </nav>
 </header>
+
+<script>
+  const navLinks = document.querySelectorAll("header nav a");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id");
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("text-yellow-400");
+          } else {
+            link.classList.remove("text-yellow-400");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll("section[id]").forEach((section) => {
+    observer.observe(section);
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-xl bg-gray-800/60 ring-1 ring-white/10;
+    }
+  }
+</style>

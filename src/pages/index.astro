@@ -16,8 +16,8 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro";
 ---
 
 <Layout
-  title="Portfolio de Javi Paez - Desarrollador Web Full Stack & IA Entusiasta"
-  description="Desarrollador Full Stack en Canary Options SL (IAbot.io). Especializado en React, Next.js, Astro y Supabase. Descubre mis proyectos y trayectoria profesional."
+  title="Javi Paez — Desarrollador Full Stack"
+  description="Full Stack en IAbot.io. Apps en producción en javistudio.dev: Tanke, Connecticat, Dancefloor, Dumelis y más. Next.js, Astro, React y PostgreSQL."
 >
   <main class="px-4">
     <SectionContainer id="hero" class="py-16 md:py-36 pb-32">
@@ -25,7 +25,7 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro";
         <img
           class="rounded-full shadow-lg size-20 object-cover border-2 border-white/10"
           src="/javi-paez.jpg"
-          alt="Javi Paez photo"
+          alt="Javi Paez"
           style="object-position: 50% 50%; filter: none;"
         />
         <a
@@ -45,14 +45,24 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro";
       <p
         class="mt-6 text-xl text-gray-300 [&>strong]:text-yellow-200 [&>strong]:font-semibold text-pretty"
       >
-        +2 años de experiencia. <strong>Desarrollador Full Stack</strong> en <span
-          class="text-yellow-200/90">Canary Options SL (IAbot.io)</span
-        >. Especializado en crear aplicaciones únicas, funcionales y escalables.
+        +2 años montando apps web y sacándolas a producción. Ahora soy{" "}
+        <strong>Desarrollador Full Stack</strong> en{" "}
+        <span class="text-yellow-200/90">Canary Options SL (IAbot.io)</span>,
+        trabajando en el producto de IA (web, APIs y flujos). El resto del
+        tiempo: proyectos propios en{" "}
+        <a
+          href="https://javistudio.dev/"
+          class="text-yellow-200/90 underline-offset-4 hover:underline"
+          rel="noopener">javistudio.dev</a
+        >.
       </p>
 
       <Skills />
 
       <nav class="flex flex-wrap gap-4 mt-8">
+        <SocialPill href="https://javistudio.dev/">
+          JaviStudio
+        </SocialPill>
         <SocialPill href="https://linkedin.com/in/javipaez">
           <LinkedInIcon class="size-4" />
           LinkedIn

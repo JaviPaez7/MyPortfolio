@@ -10,6 +10,8 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const site = "https://portfolio.javistudio.dev";
+const ogImage = `${site}/javi-paez.jpg`;
 ---
 
 <!doctype html>
@@ -18,23 +20,29 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Javi Paez" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1"
+    />
+    <link rel="canonical" href={`${site}/`} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
-    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://my-portfolio-silk-theta-83.vercel.app/" />
+    <meta property="og:url" content={`${site}/`} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/javi-paez.jpg" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Portfolio Javi Paez" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://my-portfolio-silk-theta-83.vercel.app/" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/javi-paez.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={`${site}/`} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
   </head>
   <body class="relative text-black dark:text-white">
     <div
@@ -97,6 +105,6 @@ const { title, description } = Astro.props;
     });
   };
 
-  window.addEventListener("scroll", revealElements);
+  document.addEventListener("scroll", revealElements);
   window.addEventListener("load", revealElements);
 </script>

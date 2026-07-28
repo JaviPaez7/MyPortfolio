@@ -4,51 +4,84 @@ import Tailwind from "./icons/Tailwind.astro"
 import GitHub from "./icons/GitHub.astro"
 import Link from "./icons/Link.astro"
 import Supabase from "./icons/Supabase.astro"
+import ReactIcon from "./icons/React.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import Stripe from "./icons/Stripe.astro"
+
+const pill = "bg-white/5 text-white/90 border border-white/10"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-  SUPABASE: {
-    name: "Supabase",
-    class: "bg-[#1c1c1c] text-white",
-    icon: Supabase,
-  }
+  NEXT: { name: "Next.js", class: pill, icon: NextJS },
+  REACT: { name: "React", class: pill, icon: ReactIcon },
+  TAILWIND: { name: "Tailwind CSS", class: pill, icon: Tailwind },
+  SUPABASE: { name: "Supabase", class: pill, icon: Supabase },
+  ASTRO: { name: "Astro", class: pill, icon: AstroIcon },
+  POSTGRES: { name: "PostgreSQL", class: pill, icon: PostgreSQL },
+  STRIPE: { name: "Stripe", class: pill, icon: Stripe },
 }
+
 const PROJECTS = [
   {
-    title: "DM Command Center - Gestión de Campañas D&D",
+    title: "Tanke — gasolina barata en Canarias y península",
     description:
-      "Plataforma Full Stack para Dungeon Masters. Incluye rastreador de combate, gestión de personajes en tiempo real con Supabase, tirador de dados interactivo y sistema de notas compartido.",
-    link: "https://dm-dashboard-nine.vercel.app/",
-    github: "https://github.com/JaviPaez7/dm-dashboard",
-    image: "/projects/dm-command.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.SUPABASE],
-  },
-  {
-    title: "Moviefy - Tu explorador de cine y series",
-    description:
-      "Aplicación web con scroll infinito y sistema de favoritos persistente. Integración con TMDB API para obtener los últimos estrenos y detalles técnicos de películas y series.",
-    link: "https://moviefy-rosy.vercel.app/",
-    github: "https://github.com/JaviPaez7/Moviefy",
-    image: "/projects/moviefy.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
-    title: "Tanke - Encuentra la gasolina más barata",
-    description:
-      "Buscador de gasolineras en tiempo real con filtrado por provincia y tipo de combustible. Visualización de los precios más competitivos de todo el país en Canarias y península.",
-    link: "https://tanke-seven.vercel.app/",
+      "Comparador de precios en tiempo real: filtro por provincia, municipio y tipo de combustible, más modo cerca de mí. Lo uso yo; lo saqué a producción en tanke.javistudio.dev.",
+    link: "https://tanke.javistudio.dev/",
     github: "https://github.com/JaviPaez7/tanke",
     image: "/projects/tanke.webp",
+    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.POSTGRES],
+  },
+  {
+    title: "Dancefloor — landing y entradas con Stripe",
+    description:
+      "Web del evento DanceFloor: line-up, aforo y checkout de entradas con Stripe. Next.js en producción en dancefloor.javistudio.dev.",
+    link: "https://dancefloor.javistudio.dev/",
+    image: "/projects/dancefloor.webp",
+    tags: [TAGS.NEXT, TAGS.STRIPE, TAGS.TAILWIND],
+  },
+  {
+    title: "Connecticat — red social para gatos",
+    description:
+      "Catstagram, Gatinder, curiosidades y foro. Astro + React en el front, PostgreSQL detrás. Producto completo, no un landing.",
+    link: "https://connecticat.javistudio.dev/",
+    github: "https://github.com/JaviPaez7/connecticat",
+    image: "/projects/connecticat.webp",
+    tags: [TAGS.ASTRO, TAGS.REACT, TAGS.POSTGRES],
+  },
+  {
+    title: "Dumelis — calendario de turnos compartido",
+    description:
+      "Pintas tus turnos, invitas al grupo y ves de un vistazo los días libres en común. Tiempo real, pensado para gente que rota turnos de verdad.",
+    link: "https://dumelis.javistudio.dev/",
+    image: "/projects/dumelis.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
+  },
+  {
+    title: "DM Command — panel para Dungeon Masters",
+    description:
+      "Combat tracker, bestiario, dados, soundboard y notas de campaña. PWA con backend propio; sirve para dirigir mesa sin diez pestañas abiertas.",
+    link: "https://dm-dashboard.javistudio.dev/",
+    github: "https://github.com/JaviPaez7/dm-dashboard",
+    image: "/projects/dm-command.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Pokewordle — adivina el Pokémon del día",
+    description:
+      "Wordle con atributos (tipo, hábitat, altura…). Modo diario, práctica, silueta y más. Un reto nuevo cada 24 horas.",
+    link: "https://pokewordle.javistudio.dev/",
+    github: "https://github.com/JaviPaez7/pokeWordle",
+    image: "/projects/pokewordle.webp",
+    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Moviefy — explorador de cine y series",
+    description:
+      "Catálogo con TMDB, scroll infinito y favoritos persistentes. Para descubrir estrenos sin pelearte con la API a pelo.",
+    link: "https://moviefy.javistudio.dev/",
+    github: "https://github.com/JaviPaez7/Moviefy",
+    image: "/projects/moviefy.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
 ]
 ---
@@ -60,7 +93,7 @@ const PROJECTS = [
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:ring-1 lg:ring-white/10 lg:hover:ring-white/20 ">
       <a href={link} target="_blank" rel="noopener noreferrer" class="w-full h-full">
-        <img alt="Captura de pantalla del proyecto" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+        <img alt={`Captura de ${title}`} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" width="1200" height="750" src={image} />
       </a>
     </div>
   </div>
@@ -72,7 +105,7 @@ const PROJECTS = [
       </a>
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-row flex-wrap mb-2 gap-2">
           {tags.map((tag) => (
             <li>
               <span
@@ -91,7 +124,7 @@ const PROJECTS = [
             <a
               href={github}
               role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-within:ring-none focus:outline-none focus:ring-none rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60 rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
             >
               <GitHub class="size-6" />
               Código
@@ -101,7 +134,7 @@ const PROJECTS = [
             <a
               href={link}
               role="link"
-              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus-within:ring-none focus:outline-none focus:ring-none rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
+              class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60 rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
             >
               <Link class="size-4" />
               Demo
@@ -113,4 +146,14 @@ const PROJECTS = [
 </article>
     ))
   }
+
+  <p class="text-center text-gray-400 text-sm">
+    Hay más en el hub:{" "}
+    <a
+      href="https://javistudio.dev/proyectos/"
+      class="text-yellow-200 hover:underline"
+      rel="noopener"
+      >javistudio.dev/proyectos</a
+    >.
+  </p>
 </div>

@@ -1,0 +1,44 @@
+---
+import {
+  siAstro,
+  siGit,
+  siNextdotjs,
+  siNodedotjs,
+  siPostgresql,
+  siReact,
+  siStripe,
+  siSupabase,
+  siTailwindcss,
+} from "simple-icons"
+
+const ICONS = {
+  astro: siAstro,
+  git: siGit,
+  nextdotjs: siNextdotjs,
+  nodedotjs: siNodedotjs,
+  postgresql: siPostgresql,
+  react: siReact,
+  stripe: siStripe,
+  supabase: siSupabase,
+  tailwindcss: siTailwindcss,
+} as const
+
+interface Props {
+  name: keyof typeof ICONS
+  class?: string
+}
+
+const { name, class: className, ...rest } = Astro.props
+const icon = ICONS[name]
+const iconColor = icon.hex === "000000" ? "currentColor" : `#${icon.hex}`
+---
+
+<svg
+  viewBox="0 0 24 24"
+  class={className}
+  role="img"
+  aria-label={icon.title}
+  {...rest}
+>
+  <path fill={iconColor} d={icon.path}></path>
+</svg>

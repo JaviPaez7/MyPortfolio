@@ -1,30 +1,59 @@
 ---
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Supabase from "./icons/Supabase.astro"
-import ReactIcon from "./icons/React.astro"
-import NodeIcon from "./icons/Node.astro"
-import AstroIcon from "./icons/AstroIcon.astro"
-import PostgreSQL from "./icons/PostgreSQL.astro"
-import GitIcon from "./icons/Git.astro"
+import BrandIcon from "./icons/BrandIcon.astro"
+
+const pill = "bg-white/5 text-white/90 border border-white/10"
 
 const SKILLS = [
-  { name: "Next.js", icon: NextJS },
-  { name: "React", icon: ReactIcon },
-  { name: "Tailwind CSS", icon: Tailwind },
-  { name: "Astro", icon: AstroIcon },
-  { name: "Node.js", icon: NodeIcon },
-  { name: "Supabase", icon: Supabase },
-  { name: "PostgreSQL", icon: PostgreSQL },
-  { name: "Git", icon: GitIcon },
+  {
+    name: "Next.js",
+    class: pill,
+    icon: "nextdotjs",
+  },
+  {
+    name: "React",
+    class: pill,
+    icon: "react",
+  },
+  {
+    name: "Tailwind CSS",
+    class: pill,
+    icon: "tailwindcss",
+  },
+  {
+    name: "Astro",
+    class: pill,
+    icon: "astro",
+  },
+  {
+    name: "Node.js",
+    class: pill,
+    icon: "nodedotjs",
+  },
+  {
+    name: "Supabase",
+    class: pill,
+    icon: "supabase",
+  },
+  {
+    name: "PostgreSQL",
+    class: pill,
+    icon: "postgresql",
+  },
+  {
+    name: "Git",
+    class: pill,
+    icon: "git",
+  },
 ]
 ---
 
 <div class="flex flex-wrap gap-3 mt-8">
   {
     SKILLS.map((skill) => (
-      <span class="flex items-center gap-x-2 rounded-full text-xs text-white/90 bg-white/5 border border-white/10 py-2 px-4 hover:bg-white/10 hover:scale-105 transition-all cursor-default">
-        <skill.icon class="size-4 shrink-0" />
+      <span
+        class={`flex items-center gap-x-2 rounded-full text-xs ${skill.class} py-2 px-4 hover:bg-white/10 hover:scale-105 transition-all cursor-default`}
+      >
+        <BrandIcon name={skill.icon} class="size-4 shrink-0" />
         {skill.name}
       </span>
     ))

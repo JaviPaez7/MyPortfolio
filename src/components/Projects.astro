@@ -1,94 +1,140 @@
 ---
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
 import GitHub from "./icons/GitHub.astro"
 import Link from "./icons/Link.astro"
-import Supabase from "./icons/Supabase.astro"
-import ReactIcon from "./icons/React.astro"
-import AstroIcon from "./icons/AstroIcon.astro"
-import PostgreSQL from "./icons/PostgreSQL.astro"
-import Stripe from "./icons/Stripe.astro"
+import BrandIcon from "./icons/BrandIcon.astro"
 
 const pill = "bg-white/5 text-white/90 border border-white/10"
 
 const TAGS = {
-  NEXT: { name: "Next.js", class: pill, icon: NextJS },
-  REACT: { name: "React", class: pill, icon: ReactIcon },
-  TAILWIND: { name: "Tailwind CSS", class: pill, icon: Tailwind },
-  SUPABASE: { name: "Supabase", class: pill, icon: Supabase },
-  ASTRO: { name: "Astro", class: pill, icon: AstroIcon },
-  POSTGRES: { name: "PostgreSQL", class: pill, icon: PostgreSQL },
-  STRIPE: { name: "Stripe", class: pill, icon: Stripe },
+  NEXT: {
+    name: "Next.js",
+    class: pill,
+    icon: "nextdotjs",
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: pill,
+    icon: "tailwindcss",
+  },
+  SUPABASE: {
+    name: "Supabase",
+    class: pill,
+    icon: "supabase",
+  },
+  REACT: {
+    name: "React",
+    class: pill,
+    icon: "react",
+  },
+  NODE: {
+    name: "Node.js",
+    class: pill,
+    icon: "nodedotjs",
+  },
+  POSTGRES: {
+    name: "PostgreSQL",
+    class: pill,
+    icon: "postgresql",
+  },
+  ASTRO: {
+    name: "Astro",
+    class: pill,
+    icon: "astro",
+  },
+  STRIPE: {
+    name: "Stripe",
+    class: pill,
+    icon: "stripe",
+  },
 }
-
 const PROJECTS = [
   {
-    title: "Tanke — gasolina barata en Canarias y península",
+    title: "Hub Bot — Equipo de empleados IA",
     description:
-      "Comparador de precios en tiempo real: filtro por provincia, municipio y tipo de combustible, más modo cerca de mí. Lo uso yo; lo saqué a producción en tanke.javistudio.dev.",
+      "Producto profesional desarrollado en IAbot. Permite crear y coordinar empleados IA especializados, conversar con cada perfil y ejecutar tareas reales desde un ordenador compartido por el equipo.",
+    link: "https://hub.iabot.io/hub-bot/login",
+    image: "/projects/hub-bot.png",
+    tags: [TAGS.NEXT, TAGS.NODE, TAGS.POSTGRES],
+    professional: true,
+    actionLabel: "Ver producto",
+  },
+  {
+    title: "Hub Studio — Vibe coding con IA",
+    description:
+      "Plataforma profesional creada en IAbot para generar aplicaciones web completas mediante lenguaje natural. Integra copiloto, vista previa, edición de código, datos, procesos, compilación y gestión de recursos desde un mismo espacio de trabajo.",
+    link: "https://iabot.io/",
+    image: "/projects/hub-studio.png",
+    tags: [TAGS.NEXT, TAGS.NODE, TAGS.POSTGRES],
+    professional: true,
+    actionLabel: "Ver IAbot",
+  },
+  {
+    title: "DM Command Center - Gestión de Campañas D&D",
+    description:
+      "Plataforma Full Stack para Dungeon Masters. Incluye rastreador de combate, gestión de personajes en tiempo real con Supabase, tirador de dados interactivo y sistema de notas compartido.",
+    link: "https://dm-dashboard.javistudio.dev/",
+    github: "https://github.com/JaviPaez7/dm-dashboard",
+    image: "/projects/dm-command.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.SUPABASE],
+  },
+  {
+    title: "Moviefy - Tu explorador de cine y series",
+    description:
+      "Aplicación web con scroll infinito y sistema de favoritos persistente. Integración con TMDB API para obtener los últimos estrenos y detalles técnicos de películas y series.",
+    link: "https://moviefy.javistudio.dev/",
+    github: "https://github.com/JaviPaez7/Moviefy",
+    image: "/projects/moviefy.webp",
+    tags: [TAGS.REACT, TAGS.TAILWIND],
+  },
+  {
+    title: "Tanke - Encuentra la gasolina más barata",
+    description:
+      "Aplicación Full Stack para comparar precios de combustible, guardar estaciones favoritas y recibir alertas personalizadas. Desplegada con API, base de datos y procesos programados propios.",
     link: "https://tanke.javistudio.dev/",
     github: "https://github.com/JaviPaez7/tanke",
     image: "/projects/tanke.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.POSTGRES],
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.POSTGRES],
   },
   {
-    title: "Dancefloor — landing y entradas con Stripe",
+    title: "Dancefloor — Landing y entradas con Stripe",
     description:
-      "Web del evento DanceFloor: line-up, aforo y checkout de entradas con Stripe. Next.js en producción en dancefloor.javistudio.dev.",
+      "Web de evento con presentación del cartel, información de aforo y compra de entradas mediante Stripe. Aplicación Next.js desplegada en producción.",
     link: "https://dancefloor.javistudio.dev/",
     image: "/projects/dancefloor.webp",
     tags: [TAGS.NEXT, TAGS.STRIPE, TAGS.TAILWIND],
   },
   {
-    title: "Connecticat — red social para gatos",
+    title: "Connecticat — Red social para gatos",
     description:
-      "Catstagram, Gatinder, curiosidades y foro. Astro + React en el front, PostgreSQL detrás. Producto completo, no un landing.",
+      "Producto social con publicaciones, descubrimiento de perfiles, curiosidades y foro. Combina Astro y React con persistencia en PostgreSQL.",
     link: "https://connecticat.javistudio.dev/",
     github: "https://github.com/JaviPaez7/connecticat",
     image: "/projects/connecticat.webp",
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.POSTGRES],
   },
   {
-    title: "Dumelis — calendario de turnos compartido",
+    title: "Dumelis — Calendario de turnos compartido",
     description:
-      "Pintas tus turnos, invitas al grupo y ves de un vistazo los días libres en común. Tiempo real, pensado para gente que rota turnos de verdad.",
+      "Calendario colaborativo para registrar turnos, invitar al grupo y encontrar días libres en común. Diseñado para equipos con horarios rotativos.",
     link: "https://dumelis.javistudio.dev/",
     image: "/projects/dumelis.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND],
   },
   {
-    title: "DM Command — panel para Dungeon Masters",
+    title: "Pokewordle — Adivina el Pokémon del día",
     description:
-      "Combat tracker, bestiario, dados, soundboard y notas de campaña. PWA con backend propio; sirve para dirigir mesa sin diez pestañas abiertas.",
-    link: "https://dm-dashboard.javistudio.dev/",
-    github: "https://github.com/JaviPaez7/dm-dashboard",
-    image: "/projects/dm-command.webp",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
-  },
-  {
-    title: "Pokewordle — adivina el Pokémon del día",
-    description:
-      "Wordle con atributos (tipo, hábitat, altura…). Modo diario, práctica, silueta y más. Un reto nuevo cada 24 horas.",
+      "Juego diario con pistas por atributos, modo práctica y siluetas. Ofrece un nuevo reto cada 24 horas y una experiencia adaptada a móvil.",
     link: "https://pokewordle.javistudio.dev/",
     github: "https://github.com/JaviPaez7/pokeWordle",
     image: "/projects/pokewordle.webp",
     tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND],
-  },
-  {
-    title: "Moviefy — explorador de cine y series",
-    description:
-      "Catálogo con TMDB, scroll infinito y favoritos persistentes. Para descubrir estrenos sin pelearte con la API a pelo.",
-    link: "https://moviefy.javistudio.dev/",
-    github: "https://github.com/JaviPaez7/Moviefy",
-    image: "/projects/moviefy.webp",
-    tags: [TAGS.REACT, TAGS.TAILWIND],
   },
 ]
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ image, title, description, tags, link, github, professional, actionLabel = "Demo" }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:ring-1 lg:ring-white/10 lg:hover:ring-white/20 ">
@@ -104,6 +150,11 @@ const PROJECTS = [
         {title}
       </a>
     </h3>
+    {professional && (
+      <span class="mb-3 inline-flex rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-200">
+        Experiencia profesional
+      </span>
+    )}
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-row flex-wrap mb-2 gap-2">
           {tags.map((tag) => (
@@ -111,7 +162,7 @@ const PROJECTS = [
               <span
                 class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
               >
-                <tag.icon class="size-4" />
+                <BrandIcon name={tag.icon} class="size-4 shrink-0" />
                 {tag.name}
               </span>
             </li>
@@ -137,7 +188,7 @@ const PROJECTS = [
               class="inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-800 border border-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60 rounded-xl active:bg-gray-700 hover:bg-gray-700 hover:border-gray-500 group max-w-fit"
             >
               <Link class="size-4" />
-              Demo
+              {actionLabel}
             </a>
           )}
         </footer>
@@ -148,7 +199,7 @@ const PROJECTS = [
   }
 
   <p class="text-center text-gray-400 text-sm">
-    Hay más en el hub:{" "}
+    Puedes ver el resto de proyectos en{" "}
     <a
       href="https://javistudio.dev/proyectos/"
       class="text-yellow-200 hover:underline"

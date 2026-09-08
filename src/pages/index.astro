@@ -10,14 +10,16 @@ import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Skills from "../components/Skills.astro";
+import Education from "../components/Education.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import ProfileCheck from "../components/icons/ProfileCheck.astro";
+import GraduationCap from "../components/icons/GraduationCap.astro";
 ---
 
 <Layout
-  title="Javi Paez — Desarrollador Full Stack"
-  description="Full Stack en IAbot.io. Apps en producción en javistudio.dev: Tanke, Connecticat, Dancefloor, Dumelis y más. Next.js, Astro, React y PostgreSQL."
+  title="Javi Páez · Desarrollador Full Stack especializado en IA"
+  description="Desarrollador Full Stack en prácticas en IAbot. Participante en la creación de Hub IAbot, Hub Bot y Hub Studio, con experiencia en React, Next.js, Node.js y PostgreSQL."
 >
   <main class="px-4">
     <SectionContainer id="hero" class="py-16 md:py-36 pb-32">
@@ -40,16 +42,13 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro";
       <h1
         class="text-4xl font-bold tracking-tight text-gray-200 sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-yellow-200/50 pb-1"
       >
-        Hey, soy Javi Paez
+        Hey, soy Javi Páez
       </h1>
       <p
         class="mt-6 text-xl text-gray-300 [&>strong]:text-yellow-200 [&>strong]:font-semibold text-pretty"
       >
-        +2 años montando apps web y sacándolas a producción. Ahora soy{" "}
-        <strong>Desarrollador Full Stack</strong> en{" "}
-        <span class="text-yellow-200/90">Canary Options SL (IAbot.io)</span>,
-        trabajando en el producto de IA (web, APIs y flujos). El resto del
-        tiempo: proyectos propios en{" "}
+        <strong>Desarrollador Full Stack</strong> especializado en productos web e inteligencia artificial. Actualmente trabajo en{" "}
+        <span class="text-yellow-200/90">IAbot</span>, participando en la creación de Hub IAbot, Hub Bot y Hub Studio. También desarrollo proyectos propios en{" "}
         <a
           href="https://javistudio.dev/"
           class="text-yellow-200/90 underline-offset-4 hover:underline"
@@ -114,6 +113,16 @@ import ProfileCheck from "../components/icons/ProfileCheck.astro";
           Proyectos
         </h2>
         <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="formacion" class="reveal">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+        >
+          <GraduationCap class="size-8" />
+          Formación
+        </h2>
+        <Education />
       </SectionContainer>
 
       <SectionContainer id="sobre-mi" class="reveal">

@@ -3,11 +3,12 @@ interface Props {
   title: string
   company: string
   description: string
+  highlights?: string[]
   link?: string
   date: string
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, description, highlights = [], link, date } = Astro.props
 ---
 
 <div
@@ -24,7 +25,19 @@ const { title, company, description, link, date } = Astro.props
     </div>
   </div>
   <div class="relative flex flex-col gap-2 pb-4 text-gray-300 md:col-span-3">
-    {description}
+    <p>{description}</p>
+    {
+      highlights.length > 0 && (
+        <ul class="mt-2 space-y-2 text-sm text-gray-400">
+          {highlights.map((highlight) => (
+            <li class="flex gap-2">
+              <span class="mt-2 size-1.5 shrink-0 rounded-full bg-yellow-400" aria-hidden="true"></span>
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
     {
       link && (
         <a

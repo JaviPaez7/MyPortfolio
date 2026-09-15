@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
 
+## Currículum del portfolio
+
+El PDF se mantiene mediante `scripts/cv.py`. Consulta [generación y revisión del CV](docs/curriculum.md).
+
 ```sh
 npm create astro@latest -- --template basics
 ```

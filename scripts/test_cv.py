@@ -17,16 +17,17 @@ class CurriculumTests(unittest.TestCase):
             self.assertEqual(len(pdf.pages), 1)
             page = pdf.pages[0]
             text = page.extract_text()
-            for expected in ['Javier Páez Toledo', 'D&D', 'PocketBase', 'PostgreSQL',
+            for expected in ['Javier Páez Toledo', 'Dumelis', 'WebSocket', 'SQLite', 'PostgreSQL',
                              'Tanke', 'Canary Options SL', 'Nett Digital School',
                              'Reboot Academy', 'IDIOMAS', 'Inglés']:
                 self.assertIn(expected, text)
-            for stale in ['D&D;', 'Supabase', '\ufffd']:
+            for stale in ['DM Command', 'D&D;', 'Supabase', '\ufffd']:
                 self.assertNotIn(stale, text)
             urls = {annotation.get_object()['/A']['/URI'] for annotation in page['/Annots']}
             self.assertEqual(urls, {
                 'https://portfolio.javistudio.dev/', 'https://github.com/JaviPaez7',
                 'https://linkedin.com/in/javipaez', 'mailto:javipaeztoledo@gmail.com',
+                'https://tanke.javistudio.dev/', 'https://dumelis.javistudio.dev/',
             })
 
 

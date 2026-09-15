@@ -10,8 +10,10 @@ El texto y la maquetación están en `scripts/cv.py`; la fotografía es
 a partir del PDF anterior: no es el script original recuperado.
 
 Requiere Python 3 y las dependencias fijadas en `scripts/requirements-cv.txt`.
-Usa las fuentes Bitstream Vera incluidas en ReportLab, sin depender de Segoe UI
-ni copiar fuentes propietarias de Windows a la VPS.
+La revisión de maquetación usa Helvetica, una de las familias estándar de PDF,
+sin depender de Segoe UI ni copiar fuentes propietarias de Windows a la VPS.
+El cuerpo principal tiene 9,4 puntos; la columna lateral, 9 puntos. Los márgenes
+laterales son de 36 puntos y el panel lateral tiene 16 puntos de margen interior.
 
 ```sh
 python -m venv .venv-cv
@@ -50,6 +52,12 @@ el generador no actualiza por sí mismo el PDF servido.
 - Conservados nombre, contacto, fechas, formación y experiencia del documento previo.
 - Mantenida la composición de una página con cabecera, fotografía y dos columnas;
   cambia la tipografía para permitir regeneración sin fuentes del sistema.
+
+La segunda revisión mejora tipografía, márgenes y reparto vertical respecto al
+commit `735859d`. Sustituye DM Command por Dumelis como proyecto destacado:
+calendarios compartidos, invitaciones y sincronización en tiempo real con Next.js,
+WebSocket y SQLite, contrastado con el repositorio de Dumelis. Los títulos de
+Tanke y Dumelis enlazan directamente a sus aplicaciones públicas.
 
 No se deduce de estas correcciones que Javier nunca haya usado Supabase: se alinea
 este documento con los proyectos y el texto actual del portfolio.

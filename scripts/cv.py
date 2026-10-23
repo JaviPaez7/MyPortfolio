@@ -106,16 +106,16 @@ def generate(output: Path):
     c.roundRect(369, 36, width - 36 - 369, y + 16 - 36, 8, fill=1, stroke=0)
 
     main_y = section('PERFIL', left, y, main_w)
-    main_y = para('Desarrollador Full Stack con experiencia práctica en productos web e inteligencia artificial. Actualmente participo en la creación de Hub IAbot, Hub Bot y Hub Studio dentro de Canary Options SL. Combino frontend, backend, APIs, bases de datos y despliegue para convertir necesidades de producto en soluciones útiles y mantenibles.', left, main_y, main_w)
+    main_y = para('Desarrollador Full Stack con experiencia práctica en productos web e inteligencia artificial. Actualmente desarrollo Hub Bot y Hub Studio en iabot (Iluzona Innova SL) y he puesto en producción un ERP/CRM a medida. Combino frontend, backend, APIs, bases de datos y despliegue para convertir necesidades de producto en soluciones útiles y mantenibles.', left, main_y, main_w)
     main_y = section('EXPERIENCIA', left, main_y - 8, main_w)
-    main_y = para('2026 - ACTUALIDAD', left, main_y, main_w, 8, colors.HexColor('#00619A'), gap=3)
+    main_y = para('ABRIL 2026 - ACTUALIDAD', left, main_y, main_w, 8, colors.HexColor('#00619A'), gap=3)
     main_y = para('Desarrollador Full Stack · Prácticas', left, main_y, main_w, 10, NAVY, True, 2)
-    main_y = para('Canary Options SL · IAbot', left, main_y, main_w, 8.8, MUTED)
+    main_y = para('Iluzona Innova SL · iabot', left, main_y, main_w, 8.8, MUTED)
     for bullet in [
         'Participación en el desarrollo de Hub IAbot, plataforma central del ecosistema, y Hub Bot, un Director General IA que coordina empleados especializados.',
         'Desarrollo de Hub Studio, plataforma de vibe coding para crear aplicaciones web completas mediante lenguaje natural.',
-        'Implementación Full Stack con React, Next.js, Node.js, APIs y bases de datos.',
-        'Trabajo sobre flujos con LLM, gestión de tareas y documentos, automatización y despliegues en producción.',
+        'Desarrollo y despliegue de Iluzona Control, ERP/CRM a medida que sustituye a Holded (presupuestos, facturas y auditoría).',
+        'Implementación Full Stack con React, Next.js, Node.js y bases de datos; flujos con LLM, automatización y despliegues en producción.',
     ]:
         text('•', left + 2, main_y - 9, 9, YELLOW)
         main_y = para(bullet, left + 11, main_y, main_w - 11, gap=4)
@@ -138,7 +138,7 @@ def generate(output: Path):
 
     side_y = section('FORMACIÓN', right, y, side_w, True)
     for date, title, school in [
-        ('2026 - ACTUALIDAD', 'Máster DWA · Desarrollo Web Avanzado Full Stack', 'Nett Digital School · En curso'),
+        ('DIC. 2025 - OCT. 2026', 'Máster DWA · Desarrollo Web Avanzado Full Stack', 'Nett Digital School · Finalizado · TFM: Tanke'),
         ('ENERO - JUNIO 2024', 'Bootcamp Full Stack Web Development · 800+ h', 'Reboot Academy · Con honores'),
         ('2015 - 2017', 'Técnico Superior en Actividad Física y Animación Deportiva', 'I.E.S. Nueva Isleta Tony Gallardo'),
     ]:
@@ -157,7 +157,7 @@ def generate(output: Path):
         side_y = para(value, right, side_y, side_w, 9, LIGHT, gap=16)
     side_y = section('IDIOMAS', right, side_y - 6, side_w, True)
     side_y = para('Castellano · Nativo', right, side_y, side_w, 9, WHITE, True)
-    para('Inglés · Nivel intermedio', right, side_y, side_w, 9, LIGHT)
+    para('Inglés · B2 acreditado', right, side_y, side_w, 9, LIGHT)
     c.showPage()
     c.save()
 

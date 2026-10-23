@@ -18,10 +18,10 @@ class CurriculumTests(unittest.TestCase):
             page = pdf.pages[0]
             text = page.extract_text()
             for expected in ['Javier Páez Toledo', 'Dumelis', 'WebSocket', 'SQLite', 'PostgreSQL',
-                             'Tanke', 'Canary Options SL', 'Nett Digital School',
+                             'Tanke', 'Iluzona Innova SL', 'Iluzona Control', 'Nett Digital School', 'B2',
                              'Reboot Academy', 'IDIOMAS', 'Inglés']:
                 self.assertIn(expected, text)
-            for stale in ['DM Command', 'D&D;', 'Supabase', '\ufffd']:
+            for stale in ['DM Command', 'D&D;', 'Supabase', 'Canary Options', 'En curso', '\ufffd']:
                 self.assertNotIn(stale, text)
             urls = {annotation.get_object()['/A']['/URI'] for annotation in page['/Annots']}
             self.assertEqual(urls, {

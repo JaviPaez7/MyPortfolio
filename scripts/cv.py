@@ -120,7 +120,7 @@ def generate(output: Path):
         text('•', left + 2, main_y - 9, 9, YELLOW)
         main_y = para(bullet, left + 11, main_y, main_w - 11, gap=4)
     main_y -= 5
-    main_y = para('2023 - ACTUALIDAD', left, main_y, main_w, 8, colors.HexColor('#00619A'), gap=3)
+    main_y = para('ENERO 2023 - ACTUALIDAD', left, main_y, main_w, 8, colors.HexColor('#00619A'), gap=3)
     main_y = para('Desarrollador web freelance', left, main_y, main_w, 10, NAVY, True, 2)
     main_y = para('Proyectos independientes', left, main_y, main_w, 8.8, MUTED, gap=4)
     main_y = para('Aplicaciones con React, Astro, PostgreSQL y APIs; diseño, desarrollo, puesta en producción y mantenimiento.', left, main_y, main_w, color=MUTED, gap=10)
@@ -157,7 +157,7 @@ def generate(output: Path):
         side_y = para(value, right, side_y, side_w, 9, LIGHT, gap=16)
     side_y = section('IDIOMAS', right, side_y - 6, side_w, True)
     side_y = para('Castellano · Nativo', right, side_y, side_w, 9, WHITE, True)
-    para('Inglés · B2 acreditado', right, side_y, side_w, 9, LIGHT)
+    para('Inglés · B2', right, side_y, side_w, 9, LIGHT)
     c.showPage()
     c.save()
 

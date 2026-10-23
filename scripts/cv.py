@@ -139,7 +139,7 @@ def generate(output: Path):
     side_y = section('FORMACIÓN', right, y, side_w, True)
     for date, title, school in [
         ('DIC. 2025 - OCT. 2026', 'Máster DWA · Desarrollo Web Avanzado Full Stack', 'Nett Digital School · Finalizado · TFM: Tanke'),
-        ('ENERO - JUNIO 2024', 'Bootcamp Full Stack Web Development · 800+ h', 'Reboot Academy · Con honores'),
+        ('ENERO - JUNIO 2024', 'Bootcamp Full Stack Web Development · 300 h', 'Reboot Academy · Con honores'),
         ('2015 - 2017', 'Técnico Superior en Actividad Física y Animación Deportiva', 'I.E.S. Nueva Isleta Tony Gallardo'),
     ]:
         side_y = para(date, right, side_y, side_w, 8, YELLOW, gap=4)

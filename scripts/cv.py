@@ -114,7 +114,7 @@ def generate(output: Path):
     for bullet in [
         'Participación en el desarrollo de Hub IAbot, plataforma central del ecosistema, y Hub Bot, un Director General IA que coordina empleados especializados.',
         'Desarrollo de Hub Studio, plataforma de vibe coding para crear aplicaciones web completas mediante lenguaje natural.',
-        'Desarrollo y despliegue de Iluzona Control, ERP/CRM a medida que sustituye a Holded (presupuestos, facturas y auditoría).',
+        'Desarrollo y despliegue de Iluzona Control, ERP/CRM con integración de Holded para presupuestos, catálogo y auditoría.',
         'Implementación Full Stack con React, Next.js, Node.js y bases de datos; flujos con LLM, automatización y despliegues en producción.',
     ]:
         text('•', left + 2, main_y - 9, 9, YELLOW)

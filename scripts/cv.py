@@ -31,8 +31,8 @@ def generate(output: Path):
                                   italic='CV', boldItalic='CV-Bold')
     output.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(output), pagesize=A4, invariant=1)
-    c.setTitle('CV Javier Páez Toledo - Desarrollador Full Stack')
-    c.setAuthor('Javier Páez Toledo')
+    c.setTitle('CV José Javier Páez Toledo - Desarrollador Full Stack')
+    c.setAuthor('José Javier Páez Toledo')
     c.setSubject('Currículum profesional 2026')
     c.setCreator('MyPortfolio/scripts/cv.py')
     width, height = A4
@@ -63,7 +63,7 @@ def generate(output: Path):
         c.line(x, y - 18, x + w, y - 18)
         return y - 29
 
-    text('Javier Páez Toledo', 36, height - 48, 27, WHITE, True)
+    text('José Javier Páez Toledo', 36, height - 48, 27, WHITE, True)
     text('Desarrollador Full Stack · Web e Inteligencia Artificial',
          36, height - 70, 10.7, LIGHT)
     text('Las Palmas, Canarias · 620 871 380 · javipaeztoledo@gmail.com',

@@ -17,7 +17,7 @@ class CurriculumTests(unittest.TestCase):
             self.assertEqual(len(pdf.pages), 1)
             page = pdf.pages[0]
             text = page.extract_text()
-            for expected in ['Javier Páez Toledo', 'Dumelis', 'WebSocket', 'SQLite', 'PostgreSQL',
+            for expected in ['José Javier Páez Toledo', 'Dumelis', 'WebSocket', 'SQLite', 'PostgreSQL',
                              'Tanke', 'Iluzona Innova SL', 'Iluzona Control', 'Nett Digital School', 'B2',
                              'Reboot Academy', 'IDIOMAS', 'Inglés']:
                 self.assertIn(expected, text)

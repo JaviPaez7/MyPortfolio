@@ -21,7 +21,7 @@ class CurriculumTests(unittest.TestCase):
                              'Tanke', 'Iluzona Innova SL', 'Iluzona Control', 'Nett Digital School', 'B2',
                              'Reboot Academy', 'IDIOMAS', 'Inglés']:
                 self.assertIn(expected, text)
-            for stale in ['DM Command', 'D&D;', 'Supabase', 'Canary Options', 'En curso', '\ufffd']:
+            for stale in ['Prácticas', 'DM Command', 'D&D;', 'Supabase', 'Canary Options', 'En curso', '\ufffd']:
                 self.assertNotIn(stale, text)
             urls = {annotation.get_object()['/A']['/URI'] for annotation in page['/Annots']}
             self.assertEqual(urls, {

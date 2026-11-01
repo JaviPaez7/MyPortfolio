@@ -109,7 +109,7 @@ def generate(output: Path):
     main_y = para('Desarrollador Full Stack con experiencia práctica en productos web e inteligencia artificial. Actualmente desarrollo Hub Bot y Hub Studio en iabot (Iluzona Innova SL) y he puesto en producción un ERP/CRM a medida. Combino frontend, backend, APIs, bases de datos y despliegue para convertir necesidades de producto en soluciones útiles y mantenibles.', left, main_y, main_w)
     main_y = section('EXPERIENCIA', left, main_y - 8, main_w)
     main_y = para('ABRIL 2026 - ACTUALIDAD', left, main_y, main_w, 8, colors.HexColor('#00619A'), gap=3)
-    main_y = para('Desarrollador Full Stack · Prácticas', left, main_y, main_w, 10, NAVY, True, 2)
+    main_y = para('Desarrollador Full Stack', left, main_y, main_w, 10, NAVY, True, 2)
     main_y = para('Iluzona Innova SL · iabot', left, main_y, main_w, 8.8, MUTED)
     for bullet in [
         'Participación en el desarrollo de Hub IAbot, plataforma central del ecosistema, y Hub Bot, un Director General IA que coordina empleados especializados.',
